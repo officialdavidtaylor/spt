@@ -61,8 +61,8 @@ class DC_Motor_Controller:
     idleSpeed = 0       # Center speed at zero
     speedScaler = 1    # Max speed is 100, min is -100.
 
-    maxDeltaY = 1.5     # Greatest change between cycles for forward/reverse axis in percent
-    maxDeltaX = 0.2     # Greatest change between cycles for left/right axis in percent
+    maxDeltaY = 2.0     # Greatest change between cycles for forward/reverse axis in percent
+    maxDeltaX = 1.0     # Greatest change between cycles for left/right axis in percent
 
     rSpeed = 0          # State variable that will be adjusted towards setpoint defined by user input
     lSpeed = 0          # "
