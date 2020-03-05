@@ -184,10 +184,10 @@ class Buttons:
     }
     def __init__(self, pygame_controller):
         controller_id_incrementor = 0
-        for(key in self.buttons.keys()):
+        for key in self.buttons.keys():
             self.buttons[key] = Button(controller_id_incrementor, pygame_controller)
     def updateAllButtonsState(self):
-        for(key in self.buttons.key()):
+        for key in self.buttons.key():
             self.buttons[key].updateState()
 
 
