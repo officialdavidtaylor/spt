@@ -7,5 +7,5 @@ void setup(){
 
 void loop(){
   delay(5000);
-  Serial5.println("Hello World!");
+  Serial5.print('m');
 }
