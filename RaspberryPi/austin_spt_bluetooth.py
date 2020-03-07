@@ -137,7 +137,7 @@ class Axes:
             "right_y": Axis(4, self.pygame_controller)
         }
     def updateAllAxisState(self):
-        for key in self.axes.key():
+        for key in self.axes:
             self.axes[key].updateState()
 
 class Button:
@@ -168,7 +168,7 @@ class Buttons:
             "Stick_R": Button(12, self.pygame_controller)
         }
     def updateAllButtonState(self):
-        for key in self.buttons.key():
+        for key in self.buttons:
             self.buttons[key].updateState()
 
 class Remote_Control:
