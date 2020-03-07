@@ -180,12 +180,14 @@ class Remote_Control:
         # Connect to the controller, poll until connected
         while self.pygame_controller == None:
             try:
+                pygame.init()
                 print("\nAttempting to pair controller...")
                 self.pygame_controller = pygame.joystick.Joystick(0)
             except:
                 print("Connection Failed.")
                 sleep(2)
                 self.pygame_controller = None
+                pygame.quit()
         print("Controller Paired Sucessfully")
 
         self.pygame_controller.init()
