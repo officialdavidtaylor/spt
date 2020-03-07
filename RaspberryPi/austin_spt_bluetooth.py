@@ -197,7 +197,7 @@ class Remote_Control:
         self.controllerAxes = Axes(self.pygame_controller)
 
     def Update(self):
-        pygame.event.get()
+        self.pygame.event.get()
         self.controllerButtons.updateAllButtonState()
         self.controllerAxes.updateAllAxisState()
 
