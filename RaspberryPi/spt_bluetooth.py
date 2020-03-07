@@ -33,15 +33,10 @@ import struct
 # Used for game controller interfacing
 import pygame
 
-# LED control
-#import board    # Adafruit library per https://circuitpython.readthedocs.io/projects/neopixel/en/latest/
-#import neopixel # library for controlling the LED ring
-
 #-----<GLOBAL VARIABLES>-----
 
 # GPIO PIN MAPPING
 LED_PIN = 18
-
 MOTOR_R = 32   # Used for the right side of the vehicle
 MOTOR_L = 33   # Used for the left side of the vehicle
 
@@ -57,7 +52,6 @@ class DC_Motor_Controller:
     # bus = smbus.SMBus(1)
     # address = 0x04
 
-
     idleSpeed = 0       # Center speed at zero
     speedScaler = 1    # Max speed is 100, min is -100.
 
@@ -66,8 +60,6 @@ class DC_Motor_Controller:
 
     rSpeed = 0          # State variable that will be adjusted towards setpoint defined by user input
     lSpeed = 0          # "
-
-
 
     # Pass the GPIO numbers for motor connections A and B
     def __init__(self, pinR, pinL):
@@ -170,10 +162,11 @@ def __main__():
 
     # Initialize motor controller objects
     motors = DC_Motor_Controller(MOTOR_R, MOTOR_L)
+    print("Motors initialized")
 
     # Initialize DualShock4 Controller Connection
     DS4 = Remote_Control()
-    print("Remote Control initiated\n")
+    print("Remote initialized\n")
     R_X_AXIS_SCALE_VAL = 100    # Scale right stick X-axis by 100 to match the changeSpeed method input range
     L_X_AXIS_SCALE_VAL = 100    # Scale left stick X-axis by 100 to match the changeSpeed method input range
     R_Y_AXIS_SCALE_VAL = 100    # Scale right stick Y-axis by 100 to match the changeSpeed method input range
