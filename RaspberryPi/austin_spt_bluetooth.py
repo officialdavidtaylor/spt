@@ -33,7 +33,7 @@
 import RPi.GPIO as GPIO
 
 from time import sleep
-import smbus
+#import smbus
 import struct
 
 # Used for game controller interfacing
@@ -51,8 +51,8 @@ class DC_Motor_Controller:
     """Object for controlling the DC motors with software PWM, utilizing the RPi.GPIO library"""
 
     # Default data members
-    bus = smbus.SMBus(1)
-    address = 0x04
+    #bus = smbus.SMBus(1)
+    #address = 0x04
 
     idleSpeed = 30.0    # Function of the speed controllers - PWM neutral has period of 1.5ms
     speedScaler = 10    # Max speed is 40%, min speed is 20% due to PWM config
