@@ -126,7 +126,7 @@ class Axis:
         self.pygame_controller = pygame_controller
     def updateState(self):
         self.axis_position = self.pygame_controller.get_axis(self.axis_id)
-        print("Axis: " + self.axis_id + " Value: " + self.axis_position)
+        print("Axis: " + str(self.axis_id) + " Value: " + str(self.axis_position))
 
 class Axes:
     def __init__(self, pygame_controller):
