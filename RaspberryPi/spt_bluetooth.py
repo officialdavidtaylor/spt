@@ -27,7 +27,7 @@
 import RPi.GPIO as GPIO
 
 from time import sleep
-import smbus
+# import smbus
 import struct
 
 # Used for game controller interfacing
@@ -54,8 +54,8 @@ class DC_Motor_Controller:
     """Object for controlling the DC motors with software PWM, utilizing the RPi.GPIO library"""
 
     # Default data members
-    bus = smbus.SMBus(1)
-    address = 0x04
+    # bus = smbus.SMBus(1)
+    # address = 0x04
 
 
     idleSpeed = 0       # Center speed at zero
@@ -119,14 +119,11 @@ class DC_Motor_Controller:
         if self.lSpeed < -100:
             self.lSpeed = -100
 
-        #send to arduino via i2c
-
         rMotorValue = self.idleSpeed + (self.rSpeed/self.speedScaler)
         lMotorValue = self.lSpeed + (self.lSpeed/self.speedScaler)
-        package = struct.pack('ff', rMotorValue, lMotorValue)
-        try: self.bus.write_block_data(self.address, 1, list(package))
-        except OSError as err:
-            print("OSError detected")
+        # Update PWM channels to match new speed
+        self.R_PWM.ChangeDutyCycle(rMotorValue)
+        self.L_PWM.ChangeDutyCycle(lMotorValue)
 
 class Remote_Control:
     """Use a DualShock4 controller to manually control the operation of the robot"""
