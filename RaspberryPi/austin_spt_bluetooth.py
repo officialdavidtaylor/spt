@@ -152,21 +152,21 @@ class Button:
 class Buttons:
     def __init__(self, pygame_controller):
         self.pygame_controller = pygame_controller
-    self.buttons = {
-        "X": Button(0, self.pygame_controller),
-        "Circle": Button(1, self.pygame_controller),
-        "Triangle": Button(2, self.pygame_controller),
-        "Square": Button(3, self.pygame_controller),
-        "Bumper_L": Button(4, self.pygame_controller),
-        "Bumper_R": Button(5, self.pygame_controller),
-        "Trigger_L": Button(6, self.pygame_controller),
-        "Trigger_R": Button(7, self.pygame_controller),
-        "Share": Button(8, self.pygame_controller),
-        "Options": Button(9, self.pygame_controller),
-        "PS": Button(10, self.pygame_controller),
-        "Stick_L": Button(11, self.pygame_controller),
-        "Stick_R": Button(12, self.pygame_controller)
-    }
+        self.buttons = {
+            "X": Button(0, self.pygame_controller),
+            "Circle": Button(1, self.pygame_controller),
+            "Triangle": Button(2, self.pygame_controller),
+            "Square": Button(3, self.pygame_controller),
+            "Bumper_L": Button(4, self.pygame_controller),
+            "Bumper_R": Button(5, self.pygame_controller),
+            "Trigger_L": Button(6, self.pygame_controller),
+            "Trigger_R": Button(7, self.pygame_controller),
+            "Share": Button(8, self.pygame_controller),
+            "Options": Button(9, self.pygame_controller),
+            "PS": Button(10, self.pygame_controller),
+            "Stick_L": Button(11, self.pygame_controller),
+            "Stick_R": Button(12, self.pygame_controller)
+        }
     def updateAllButtonState(self):
         for key in self.buttons.key():
             self.buttons[key].updateState()
