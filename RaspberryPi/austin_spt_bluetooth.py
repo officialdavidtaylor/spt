@@ -179,7 +179,7 @@ class Remote_Control:
         # Connect to the controller, poll until connected
         while self.pygame_controller == None:
             try:
-                print("Attempting to pair controller...")
+                print("\nAttempting to pair controller...")
                 self.pygame_controller = pygame.joystick.Joystick(0)
             except:
                 print("Connection Failed.")
@@ -218,6 +218,8 @@ def __main__():
     try:
         while True:
             Remote.Update()
+            print(Remote.controllerAxes.axes["right_x"].axis_position)
+            print(Remote.controllerAxes.axes["left_y"].axis_position)
             motors.ChangeSpeed((Remote.controllerAxes.axes["right_x"].axis_position *
                 R_X_AXIS_SCALE_VAL), (Remote.controllerAxes.axes["left_y"].axis_position *
                 L_Y_AXIS_SCALE_VAL))
