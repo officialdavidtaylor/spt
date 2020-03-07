@@ -215,8 +215,8 @@ def __main__():
     try:
         while True:
             Remote.Update()
-            motors.ChangeSpeed((Remote.controllerAxes.axes["right_x"] *
-                R_X_AXIS_SCALE_VAL), (Remote.controllerAxes.axes["left_y"] *
+            motors.ChangeSpeed((Remote.controllerAxes.axes["right_x"].axis_position *
+                R_X_AXIS_SCALE_VAL), (Remote.controllerAxes.axes["left_y"].axis_position *
                 L_Y_AXIS_SCALE_VAL))
 
     except KeyboardInterrupt:
