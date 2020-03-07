@@ -179,10 +179,13 @@ class Remote_Control:
         # Connect to the controller, poll until connected
         while self.pygame_controller == None:
             try:
+                print("Attempting to pair controller...")
                 self.pygame_controller = pygame.joystick.Joystick(0)
             except:
+                print("Connection Failed.")
                 sleep(2)
                 self.pygame_controller = None
+        print("Controller Paired Sucessfully")
 
         self.pygame_controller.init()
 
@@ -221,7 +224,7 @@ def __main__():
 
     except KeyboardInterrupt:
         print("\nEXITING NOW\n")
-        DS4.controller.quit()
+        Remote.controller.quit()
         GPIO.cleanup()  # to be used when GPIO is active
 
 #-----</FUNCTIONS>-----
